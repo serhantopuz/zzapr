@@ -7,7 +7,6 @@ public class Task03 {
     public static void generateRandArray(int[] arr){
         int randomNum;
 
-
         for (int i = 0; i < arr.length; i++){
             randomNum = (int) (20 * Math.random());
             arr[i] = randomNum;

@@ -1,6 +1,6 @@
 import utils.Task03;
 
-public class task03 {
+public class task03Main {
 
     public static void main(String[] args){
         int[] arr = new int[10];

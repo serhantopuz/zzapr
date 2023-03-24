@@ -1,3 +1,5 @@
+package Week02;
+
 import java.util.*;
 public class task02 {
     public static void main(String[] args){

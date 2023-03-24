@@ -1,4 +1,4 @@
-import utils.Task03;
+package Week03;
 
 public class task03Main {
 

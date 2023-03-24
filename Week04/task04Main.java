@@ -1,10 +1,9 @@
-import utils.Task04;
-import java.util.Scanner;
+package Week04;
 
 public class task04Main {
     public static void main(String[] args) {
-        Task04 matrixA = new Task04(4,3);
-        Task04 matrixB = new Task04(4,3);
+        Task04 matrixA = new Task04(3,3 );
+        Task04 matrixB = new Task04(3,3);
 
         matrixA.generateRandomMatrix(-20, 20);
         matrixB.generateRandomMatrix(-20, 20);

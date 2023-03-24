@@ -1,4 +1,4 @@
-package utils;
+package Week04;
 
 
 public class Task04 {
@@ -22,30 +22,25 @@ public class Task04 {
     public String toString() {
         String text = "";
 
-        for (int i = 0; i < elements.length; i++) {
+        for (int[] element : elements) {
             for (int j = 0; j < elements[0].length; j++) {
-                text += String.format("%6d", elements[i][j]);
+                text += String.format("%6d", element[j]);
             }
-            text+= "\n";
+            text += "\n";
         }
 
         return text;
     }
 
     public boolean dimensionAreTheSame(Task04 anotherMatrix){
-        boolean result = false;
 
-        if (elements.length == anotherMatrix.elements.length && elements[0].length == anotherMatrix.elements[0].length){
-            result = true;
-        }
-
-        return result;
+        return elements.length == anotherMatrix.elements.length && elements[0].length == anotherMatrix.elements[0].length;
     }
     public Task04 sumMatrix(Task04 anotherMatrix){
         Task04 result = null;
 
         if (dimensionAreTheSame(anotherMatrix)){
-            result = new Task04(4,3);
+            result = new Task04(3,3);
             for (int i = 0; i < elements.length; i++) {
                 for (int j = 0; j < elements[0].length; j++) {
                     result.elements[i][j] = elements[i][j] + anotherMatrix.elements[i][j];
@@ -60,13 +55,22 @@ public class Task04 {
     public Task04 multiMatrix(Task04 anotherMatrix){
         Task04 result = null;
 
-        if (dimensionAreTheSame(anotherMatrix)){
-            result = new Task04(4,3);
-            for (int i = 0; i < elements.length; i++) {
-                for (int j = 0; j < elements[0].length; j++) {
-                    result.elements[i][j] = elements[i][j] * anotherMatrix.elements[i][j];
-                }
+        int rowsA = elements.length;
+        int colsA = elements[0].length;
+        int rowsB = anotherMatrix.elements.length;
+        int colsB = anotherMatrix.elements[0].length;
 
+        if (colsA != rowsB) {
+            System.out.println("Cannot multiply matrices with incompatible dimensions");
+        }
+        else{
+            result = new Task04(3,3);
+            for (int i = 0; i < rowsA; i++) {
+                for (int j = 0; j < colsB; j++) {
+                    for (int k = 0; k < colsA; k++) {
+                        result.elements[i][j] += elements[i][k] * anotherMatrix.elements[k][j];
+                    }
+                }
             }
         }
 

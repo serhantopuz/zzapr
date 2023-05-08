@@ -1,6 +1,6 @@
 package Week05;
 
-public class Main {
+public class task05Main {
     public static void main(String[] args){
         Car car01 = new Car("Fiat", "500", 10000, 105000);
         Car car02 = new Car("Porsche", "911", 100000, 11250);

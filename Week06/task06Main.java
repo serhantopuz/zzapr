@@ -2,16 +2,26 @@ package Week06;
 
 public class task06Main {
     public static void main(String[] args){
-        Owner john = new Owner("John");
+        PetStore petStore = new PetStore();
 
-        Mammal cat = new Mammal("Whiskers", 3, "orange");
-        Mammal dog = new Mammal("Fido", 5, "brown");
-        Reptile lizard = new Reptile("Spike", 2, true);
+        Cat cat1 = new Cat("Fido", 5, "brown", "male");
+        Cat cat2 = new Cat("Fluffy", 2, "grey", "female");
 
-        john.addAnimal(cat);
-        john.addAnimal(dog);
-        john.addAnimal(lizard);
+        Dog dog1 = new Dog("Whiskers", 3, "orange", "male");
+        Dog dog2 = new Dog("Bella", 1, "black", "female");
+        Dog dog3 = new Dog("Max", 4, "white", "male");
 
-        System.out.println(john);
+        petStore.addAnimal(cat1);
+        petStore.addAnimal(cat2);
+        petStore.addAnimal(dog1);
+        petStore.addAnimal(dog2);
+        petStore.addAnimal(dog3);
+
+        petStore.sortAnimalsByAge();
+        System.out.println(petStore);
+
+        petStore.petAnimal();
+
+
     }
 }
